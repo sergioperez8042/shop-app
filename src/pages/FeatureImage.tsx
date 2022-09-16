@@ -1,11 +1,8 @@
-import React from "react";
-import { StyledImageFuture , Image} from "../components/styled/styled";
+import React from 'react';
 
-import styles from "../features/home/FeatureImage.module.css";
-
-import shoeImg from "../images/cart2.jpeg";
-
-import shoeImg1 from "../images/shop1.jpeg";
+import { Image, StyledImageFuture } from '../components/styled/styled';
+import shoeImg from '../assets/cart2.jpeg';
+import shoeImg1 from '../assets/shop1.jpeg';
 
 export const FeatureImage: React.FC<{}> = () => {
   return (
