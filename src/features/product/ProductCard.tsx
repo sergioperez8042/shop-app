@@ -1,7 +1,7 @@
 import { FaCartPlus } from "react-icons/fa";
 import { MdDescription } from "react-icons/md";
 import { Link } from "react-router-dom";
-
+import { Button, StyledCard, StyledCategory, StyledImage, StyledPrice, StyledTitle } from "../../components/styled/styled";
 import { add } from "../../features/cart/cartSlice";
 import styles from "../../features/product/ProductCard.module.css";
 import { useAppDispatch } from "../../hooks/hooks";
@@ -28,26 +28,28 @@ export const ProductCard: React.FC<ProdProps> = (props) => {
       image: image,
       includedInSum: false,
       page: 0,
-      per_page: 0
+      per_page: 0,
+      quantity: 0,
     };
     dispatch(add(item));
   };
   return (
-    <div className={styles.card}>
-      <img src={image} alt="shoe" title={title} className={styles.cardImage} />
-      <p className={styles.shoeName}>{title}</p>
-      <p className={styles.shoeCategory}>{`Category: ${category}`}</p>
-      <p className={styles.shoePrice}>{`Price: ${price}`}</p>
-      <button onClick={() => addP()} className={styles.addToCart}>
-        <FaCartPlus /> Add to Cart
-      </button>
+    <StyledCard>
+      <StyledImage src={image} alt="shoe" title={title} />
 
-      <button className={styles.details}>
+      <StyledTitle>{title.slice(0, 17)}</StyledTitle>
+      <StyledCategory>{`Category: ${category}`}</StyledCategory>
+      <StyledPrice>{`Price: ${price}`}</StyledPrice>
+
+      <Button onClick={() => addP()}>
+        <FaCartPlus /> Add to Cart
+      </Button>
+
+      <Button color="white" backgroundColor="#282c34" onClick={() => addP()}>
         <Link style={{ color: "white" }} to={`/product/${id}`}>
           <MdDescription /> Product Details
         </Link>
-      </button>
-    </div>
-    
+      </Button>
+    </StyledCard>
   );
 };

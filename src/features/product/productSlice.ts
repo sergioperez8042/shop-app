@@ -5,7 +5,7 @@ import { getProduct } from "./productAPI";
 
 export interface ProductState {
   data: Product[] | null;
-page: number;
+  page: number;
   error: string | null;
   isLoading: boolean;
 }
@@ -20,9 +20,7 @@ const initialState = {
 export const productSlice = createSlice({
   name: "product",
   initialState,
-  reducers: {
-  
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(getProduct.pending, (state, action) => {

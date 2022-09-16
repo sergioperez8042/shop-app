@@ -1,11 +1,4 @@
-.container {
-  padding: 3%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  margin-left: 15%;
-  ;
-}
+
 .imagesContainer,
 .meta {
   width: 38%;
@@ -91,7 +84,7 @@
   transform: scale(1.05);
 }
 .addToCart:hover {
-  background-color: #282c34;
+  background-color: #1e283c;
 }
 .goToCart:hover {
   background-color: #282c34;
@@ -106,18 +99,6 @@
   margin-bottom: 10px;
 }
 
-.images {
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  border: 2px solid #282c34;
-  border-radius: 10px;
-  width: 25%;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-/* .images::-webkit-scrollbar-track {
-} */
 
 .image {
   width: 100px;
@@ -125,9 +106,7 @@
   border-radius: 5px;
   cursor: pointer;
 }
-.image:hover {
-  border: 2px solid #282c34;
-}
+
 .activeImage {
   border: 2px solid #282c34;
 }

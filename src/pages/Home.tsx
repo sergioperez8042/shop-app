@@ -1,7 +1,7 @@
 import React from "react";
 
 import { FeatureImage } from "./FeatureImage";
-import { Collections } from "./Collections";
+import { Collections } from "../pages/Collections";
 
 export const Home: React.FC<{}> = () => {
   return (

@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import { FaProductHunt, FaTools, FaRegSmileBeam } from "react-icons/fa";
 import { GiFemale, GiMale } from "react-icons/gi";
 
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-import styles from "../../components/navBar/NavBar.module.css";
-import { getProduct } from "../product";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import styles from "../components/navBar/NavBar.module.css";
+import { getProduct } from "../features/product";
 import { useEffect } from "react";
-import { Loader } from "../../components/loader/loader";
-import { ProductCard } from "../product/ProductCard";
+import { Loader } from "../components/loader/loader";
+import { ProductCard } from "../features/product/ProductCard";
 
 export const Collections: React.FC<{}> = () => {
   const { data, isLoading } = useAppSelector((state) => state.product);
@@ -69,13 +69,9 @@ export const Collections: React.FC<{}> = () => {
             filter.map((prod) => (
               <div className="col-md-6 col-lg-4" key={prod.id}>
                 <ProductCard product={prod} />
-              
               </div>
-              
             ))
-            
           )}
-           
         </div>
       </div>
     </div>

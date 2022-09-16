@@ -8,11 +8,10 @@ import {
   FaUser,
 } from "react-icons/fa";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import { logout, reset } from "../../features/auth/authSlice";
-import styles from "./NavBar.module.css";
-
-import { useAppDispatch, useAppSelector } from "../../hooks/hooks";
-
+import { logout, reset } from "../features/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "../hooks/hooks";
+import { StyledHeader } from "../components/styled/styled";
+import styles from '../components/navBar/NavBar.module.css';
 const Navbar: React.FC<{}> = () => {
   const items = useAppSelector((state) => state.cart);
   const { user } = useAppSelector((state) => state.auth);
@@ -26,7 +25,7 @@ const Navbar: React.FC<{}> = () => {
   };
 
   return (
-    <header className="header">
+    <StyledHeader className="navbar">
       <Link to="/" className="toggle-button">
         <span className="bar"></span>
         <span className="bar"></span>
@@ -39,8 +38,8 @@ const Navbar: React.FC<{}> = () => {
       </div>
 
       <ul>
-        <div className = 'navLink'>
-          <Link  to="/">
+        <div className="navLink">
+          <Link to="/">
             <button
               data-testid="home-navlink"
               className={styles.link}
@@ -75,13 +74,12 @@ const Navbar: React.FC<{}> = () => {
           )}
           <Link className={styles.link} to="/cart">
             <button className={styles.link}>
-
-            {<FaShoppingCart />} Cart: {items.length}
+              {<FaShoppingCart />} Cart: {items.length}
             </button>
           </Link>
         </div>
       </ul>
-    </header>
+    </StyledHeader>
   );
 };
 export default Navbar;
